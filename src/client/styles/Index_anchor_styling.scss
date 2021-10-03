@@ -1,0 +1,27 @@
+$background-color: transparent;
+
+a {
+    &:link {
+      color: blueviolet;
+      background-color: $background-color;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: red;  
+      background-color: $background-color;
+      text-decoration: none;
+    }
+  
+    &:hover {
+      color: pink;
+      background-color: $background-color;
+      text-decoration: underline;
+    }
+  
+    &:active {
+      color: yellow;
+      background-color: $background-color;
+      text-decoration: underline;
+    }
+}

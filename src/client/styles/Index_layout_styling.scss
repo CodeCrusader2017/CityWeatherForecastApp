@@ -1,0 +1,148 @@
+$background-color: cyan;
+
+/*Display mobile device first - but see @media below for desktop etc*/
+.container {
+  /* display:grid; */
+  display:flex;
+  flex-wrap: wrap; 
+  height: 87vh;
+  /* grid-template-columns: 85px; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr ;
+  grid-template-areas: 
+  "hd"
+  "sd"
+  "main"
+  "ft";
+}  
+
+.box {
+  border: 1px solid yellowgreen;
+  background: rgb(211, 211, 211);
+}
+
+.header {
+  grid-area:hd;
+  background: $background-color;
+  text-align: left; 
+  height:15vh;  
+}
+
+.sidebar {
+  grid-area:sd;
+  background: lightcyan;
+  height:73.5vh;
+}
+
+.footer {
+  grid-area:ft;
+  background-color: black;
+  height:16.5vh;
+}
+
+.content {
+  /* display: column;               */
+  /* display: grid;                 */                  
+  /* flex-direction: row;           */
+  /* background-size: cover;        */
+  /* background-repeat: auto;       */
+  /* background-position: relative; */
+  grid-area:main;
+  display: flex;
+  flex-wrap: wrap;                   
+  justify-content: left;
+  grid-auto-rows: minmax(150px, auto);
+  height:73.5vh;;
+  background: lightgrey;
+  color: black;
+  justify-content: left;
+  grid-gap: 1em;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+#footerlinks {
+  grid-area:ft;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  list-style-position: inside;
+  color: white;
+  background-position: center;
+  
+}
+
+#generate {
+    grid-area:main;
+    width: 300px;
+    height: 50px;
+    background: #3b4a6b;
+    color: #f0d43a;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+    border: 1px solid blue;
+}
+
+#dateinput {
+    grid-area:main;
+    display:block;
+    height: 50px;
+    width: 300px;
+    background:#22b2da;
+    color: #f0d43a;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+#cityLocation {
+    grid-area:main;
+    height: 50px;
+    width: 300px;
+    background:#22b2da;
+    color: #f0d43a;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+}
+
+#results {
+    grid-area:main;
+    background: $background-color;
+    display:flex;
+    flex-wrap: wrap; 
+    /* display: grid; */
+    height: 230px;
+    width: 700px;
+    justify-content: left;
+    font-size: 15px;
+}
+
+/* Set up for desktop Screens */
+@media (min-width: 100px) and (max-width:1600px) {
+.container {
+  display:grid;
+  grid-template-columns: 100px 300px 300px;
+  grid-template-rows: 100px 505px;
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd"
+  "sd main main main main main main main"
+  "ft ft ft ft ft ft ft ft";
+  border: 2px solid lightgray;
+  } 
+}
+
+/*Set up for display on very large screens, such as projectors*/
+@media(min-width:1601px) {
+.container {
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 100px 500px;
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd"
+  "sd main main main main main main main"
+  "ft ft ft ft ft ft ft ft";
+  border: 2px solid lightgray;
+  } 
+}
+  

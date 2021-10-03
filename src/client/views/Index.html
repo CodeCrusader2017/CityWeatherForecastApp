@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>City travel destination weather status</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1"  name="viewport"/>
+    <!-- <link rel="stylesheet" href="css/index.css"/>  -->
+  </head>
+  <body>
+    <div class = "container">
+      
+      <header class="header box">
+         <h1>City travel destination weather status - powered by geonames.org, weatherbit.io & Pixabay.com APIs</h1>
+      </header>
+      <div class="sidebar box"><h2>Links</h2>
+        <p><button><a href = "mailto: paul@Udacity.com" target="_blank">Contact me</a></button></p> <!-- Note: this is a fake email -->
+        <p><button><a href = "https://www.udacity.com" target="_blank"> Udacity home</a></button></p>
+        <p><button><a href = "https://pixabay.com/service/about/#goodies" target="_blank"> pixabay.com</a></button></p>
+        <p><button><a href = "https://www.geonames.org/export/" target="_blank"> geonames.org</a></button></p>
+        <p><button><a href = "https://www.weatherbit.io/faq" target="_blank"> weatherbit.io</a></button></p>
+      </div>
+
+      <div class="content box">
+        <div class ="citylocation">
+           <label for="citylocation">Enter destination:</label>
+           <input type="text" id="cityLocation" placeholder=" city destination ">
+        </div>
+        <div class ="dateinput">
+           <label for="dateinput">Enter your travel date here - if no date is entered then the weather forecast defaults to the current week:</label>
+           <input type="date" id="dateinput" name="date">
+           <button id="generate" type = "submit"> Click here for travel weather  </button>
+        </div>
+        
+        <div id ="results">
+          <label for="results"><bold>Results: </bold></label>
+          <div class = "weatherresults"></div>
+              <div id = "resultsHolder">
+                 <div id = "weather"></div>
+                 <div id = "weatherfcastextradays"></div> 
+                 <div id = "cityimage"></div>
+                 <div id = "picturecredits"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer box" id="footerlinks">Useful social media and other sites: 
+        <ul>
+          <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>  <a href="https://github.com/" target="_blank">GitHub</a></li>
+          <li><a href="https://facebook.com/" target="_blank">Facebook</a>  <a href="https://twitter.com/" target="_blank">Twitter</a></li>
+        </ul>
+        <p><em>Copyright &copy; 2021 Paul (Udacity student)</em></p>
+      </div>
+
+    </div>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+     </script>
+  </body>
+</html>
